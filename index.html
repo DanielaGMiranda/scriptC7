@@ -16,12 +16,13 @@
     <hr>
     <h3>Script Súper Velocidad</h3>
     <textarea cols='80' rows='4' id="codigo">
-        --//Coloca este script en el modelo del hongo y ejecuta para ver el resultado// 
+        --//Coloca este script en el modelo de la poción y ejecuta para ver el resultado// 
 
-        while true do
-	        wait()
-	        script.Parent.CFrame = script.Parent.CFrame * CFrame.fromEulerAngles(0.1,0.1,0.1)
-        end   
+        script.Parent.Touched:Connect(function(speed)
+	speed.Parent.Humanoid.WalkSpeed=50
+	script.Parent:Destroy()
+	end)
+
 
         </textarea><br>
         <button type="button" id="copyClip" data-clipboard-target="#codigo">Copiar</button>
